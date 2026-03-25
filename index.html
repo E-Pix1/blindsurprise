@@ -1,47 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>BlindSurprise! - Home</title>
+  <title>BlindSurprise! — Official Website</title>
   <style>
-    body { font-family: Arial; background:#fef6ff; margin:0; padding:0; }
-    header { background:#ff8ad4; color:white; padding:20px; text-align:center; }
-    main { max-width:900px; margin:20px auto; padding:0 16px; }
-    .product { background:white; padding:16px; border-radius:10px; margin-bottom:16px; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafaff;
+      color: #222;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6a5acd, #483d8b);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 52px;
+      font-weight: bold;
+    }
+
+    header p {
+      margin-top: 12px;
+      font-size: 20px;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 14px 28px;
+      background: #6a5acd;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-size: 20px;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #5a4acb;
+    }
+
+    footer {
+      margin-top: 70px;
+      background: #eee;
+      padding: 25px;
+      text-align: center;
+      font-size: 15px;
+      color: #555;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>BlindSurprise! Shop</h1>
-  <p>Blind Bags are powerful.</p>
+  <h1>BlindSurprise!</h1>
+  <p>The official home of the BlindSurprise! mystery experience</p>
 </header>
 
 <main>
-  <h2>Products</h2>
-  <div id="products"></div>
+  <h2>Welcome to BlindSurprise!</h2>
+  <p>
+    Dive into the world of mystery, excitement, and creativity.  
+    Every BlindSurprise! product is crafted with imagination and passion.
+  </p>
+
+  <p><strong>Created by E‑Pix® and Dojjwok (Liza) Wuol®</strong></p>
+
+  <a class="button" href="/shop.html">Visit the Shop</a>
 </main>
 
-<script>
-  async function loadProducts() {
-    const res = await fetch('/api/products');
-    const data = await res.json();
-    const container = document.getElementById('products');
-
-    data.forEach(p => {
-      const div = document.createElement('div');
-      div.className = 'product';
-      div.innerHTML = `
-        <h3>${p.name}</h3>
-        <p>${p.description}</p>
-        <p>Stock: ${p.stock}</p>
-      `;
-      container.appendChild(div);
-    });
-  }
-
-  loadProducts();
-</script>
+<footer>
+  © 2026 BlindSurprise! — All Rights Reserved<br>
+  BlindSurprise! is owned by <strong>E‑Pix®</strong>
+</footer>
 
 </body>
 </html>
