@@ -1,16 +1,12 @@
-export default function handler(req, res) {
-  const products = [
-    {
-      id: "beach-time-blind-bag",
-      name: "Beach Time Blind Bag",
-      description: "A fun mystery blind bag with beach-themed surprises.",
-      price: 0.00,
-      images: [
-        "/beach-time-front.jpg",
-        "/beach-time-back.jpg"
-      ]
-    }
-  ];
-
-  res.status(200).json(products);
-}
+[
+  {
+    "id": "beach-time-blind-bag",
+    "name": "Beach Time Blind Bag",
+    "description": "A fun mystery blind bag with beach-themed items.",
+    "price": 0.00,
+    "images": [
+      "/beach-time-front.jpg",
+      "/beach-time-back.jpg"
+    ]
+  }
+]
