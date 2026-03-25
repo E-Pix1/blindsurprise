@@ -8,7 +8,10 @@ export default function handler(req, res) {
       description: "A summer-themed blind bag featuring Cool, Amazing, and ULTRA Cool surprises.",
       rarityLevels: ["Cool", "Amazing", "ULTRA Cool"],
       creators: "E‑Pix® and Liza Wuol® 2026",
-      images: ["beach-time-front.jpg"]
+      images: [
+        "/beach-time-front.jpg",
+        "/beach-time-back.jpg"
+      ]
     }
   ];
 
