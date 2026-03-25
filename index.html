@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>BlindSurprise! - Home</title>
+  <style>
+    body { font-family: Arial; background:#fef6ff; margin:0; padding:0; }
+    header { background:#ff8ad4; color:white; padding:20px; text-align:center; }
+    main { max-width:900px; margin:20px auto; padding:0 16px; }
+    .product { background:white; padding:16px; border-radius:10px; margin-bottom:16px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>BlindSurprise! Shop</h1>
+  <p>Blind Bags are powerful.</p>
+</header>
+
+<main>
+  <h2>Products</h2>
+  <div id="products"></div>
+</main>
+
+<script>
+  async function loadProducts() {
+    const res = await fetch('/api/products');
+    const data = await res.json();
+    const container = document.getElementById('products');
+
+    data.forEach(p => {
+      const div = document.createElement('div');
+      div.className = 'product';
+      div.innerHTML = `
+        <h3>${p.name}</h3>
+        <p>${p.description}</p>
+        <p>Stock: ${p.stock}</p>
+      `;
+      container.appendChild(div);
+    });
+  }
+
+  loadProducts();
+</script>
+
+</body>
+</html>
