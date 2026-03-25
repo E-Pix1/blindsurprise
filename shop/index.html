@@ -87,22 +87,8 @@
 <main>
   <h2>Available Products</h2>
 
-  <div class="product-grid">
-
-    <div class="product">
-      <img src="/beach-time-front.jpg" alt="Beach Time Series">
-      <h3>Beach Time Series</h3>
-      <p>Fun, colorful, and full of surprises.</p>
-      <button>View Product</button>
-    </div>
-
-    <div class="product">
-      <img src="/beach-time-front-back.jpg" alt="Beach Time Pack">
-      <h3>Beach Time Pack</h3>
-      <p>Includes front + back artwork.</p>
-      <button>View Product</button>
-    </div>
-
+  <div id="product-grid" class="product-grid">
+    <!-- Products will load here automatically -->
   </div>
 </main>
 
@@ -110,6 +96,39 @@
   © 2026 BlindSurprise! — All Rights Reserved<br>
   Created by E‑Pix® and Dojjwok (Liza) Wuol®
 </footer>
+
+<script>
+  // Load products from API
+  fetch("/api/products")
+    .then(res => res.json())
+    .then(products => {
+      const grid = document.getElementById("product-grid");
+
+      if (products.length === 0) {
+        grid.innerHTML = "<p>No products available yet.</p>";
+        return;
+      }
+
+      products.forEach(product => {
+        const item = document.createElement("div");
+        item.className = "product";
+
+        item.innerHTML = `
+          <img src="${product.image}" alt="${product.name}">
+          <h3>${product.name}</h3>
+          <p>${product.description}</p>
+          <button onclick="alert('Product: ${product.name}')">View Product</button>
+        `;
+
+        grid.appendChild(item);
+      });
+    })
+    .catch(err => {
+      console.error("Error loading products:", err);
+      document.getElementById("product-grid").innerHTML =
+        "<p>Failed to load products.</p>";
+    });
+</script>
 
 </body>
 </html>
