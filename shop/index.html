@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BlindSurprise! Shop</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5ff;
+      color: #222;
+    }
+
+    header {
+      background: #6a5acd;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 42px;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .product {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product h3 {
+      margin: 15px 0 10px;
+    }
+
+    .product button {
+      padding: 10px 20px;
+      background: #6a5acd;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .product button:hover {
+      background: #5a4acb;
+    }
+
+    footer {
+      margin-top: 60px;
+      background: #eee;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>BlindSurprise! Shop</h1>
+  <p>Discover our mystery products</p>
+</header>
+
+<main>
+  <h2>Available Products</h2>
+
+  <div class="product-grid">
+
+    <div class="product">
+      <img src="/images/beach-time-front.jpg" alt="Beach Time Series">
+      <h3>Beach Time Series</h3>
+      <p>Fun, colorful, and full of surprises.</p>
+      <button>View Product</button>
+    </div>
+
+    <div class="product">
+      <img src="/images/beach-time-front-back.jpg" alt="Beach Time Pack">
+      <h3>Beach Time Pack</h3>
+      <p>Includes front + back artwork.</p>
+      <button>View Product</button>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © 2026 BlindSurprise! — All Rights Reserved<br>
+  Created by E‑Pix® and Dojjwok (Liza) Wuol®
+</footer>
+
+</body>
+</html>
